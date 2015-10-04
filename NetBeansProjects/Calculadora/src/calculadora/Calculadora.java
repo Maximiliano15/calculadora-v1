@@ -18,52 +18,78 @@ public class Calculadora {
      */
     @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
-        int operaciones;
-        double num1;
+        int operaciones = 0;
+        int num1;
         int num2;
-        double resultado;
+        int resultado;
+        do {
+            try {
 
-       do 
-       {
-            operaciones = Integer.parseInt(JOptionPane.showInputDialog(null, "1.Sumar\n"
-                    + "2.Restar\n" + "3.Multiplicar\n" + "4.Dividir\n" + "5.salir\n"));
- 
-            switch (operaciones) {
-                case 1:
-                    num1 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el primer numero"));
-                    num2 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el segundo numero"));
-                    resultado = num1 + num2;
-                    JOptionPane.showMessageDialog(null, "la suma es :  " + resultado);
-                    break;
+                operaciones = Integer.parseInt(JOptionPane.showInputDialog(null, "1.Sumar\n"
+                        + "2.Restar\n" + "3.Multiplicar\n" + "4.Dividir\n" + "5.Nº mayor\n"
+                        + "6.Pocentaje\n" + "7.Salir"));
 
-                case 2:
-                    num1 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el primer numero"));
-                    num2 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el segundo numero"));
-                    resultado = num1 - num2;
-                    JOptionPane.showMessageDialog(null, "la resta es :  " + resultado);
-                    break;
-                case 3:
-                    num1 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el primer numero"));
-                    num2 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el segundo numero"));
-                    resultado = num1 * num2;
-                    JOptionPane.showMessageDialog(null, "la multiplicacion es :  " + resultado);
-                    break;
-                case 4:
-                    num1 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el primer numero"));
-                    num2 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el segundo numero"));
-                    resultado = num1 / num2;
-                    JOptionPane.showMessageDialog(null, "la division es :  " + resultado);
-                    break;
-                case 5:
-                    JOptionPane.showInputDialog("Deseas abandona el menu:\n 1.Si\n 2.No\n");
-                default:
-                    JOptionPane.showMessageDialog(null, "Opcion Invalida");
+                switch (operaciones) {
+                    case 1:
+                        num1 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el primer numero"));
+                        num2 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el segundo numero"));
+                        resultado = num1 + num2;
+
+                        JOptionPane.showMessageDialog(null, "la suma es :  " + resultado);
+                        break;
+
+                    case 2:
+                        num1 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el primer numero"));
+                        num2 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el segundo numero"));
+                        resultado = num1 - num2;
+                        JOptionPane.showMessageDialog(null, "la resta es :  " + resultado);
+                        break;
+                    case 3:
+                        num1 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el primer numero"));
+                        num2 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el segundo numero"));
+                        resultado = num1 * num2;
+                        JOptionPane.showMessageDialog(null, "la multiplicacion es :  " + resultado);
+                        break;
+                    case 4:
+                        num1 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el primer numero"));
+                        num2 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el segundo numero"));
+                        resultado = num1 / num2;
+                        JOptionPane.showMessageDialog(null, "la division es :  " + resultado);
+                        break;
+                    case 5:
+                        num1 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el primer numero"));
+                        num2 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el segundo numero"));
+                        if (num1 > num2) {
+                            JOptionPane.showMessageDialog(null, "el numero mayor es :   " + num1);
+                        } else if (num1 < num2) {
+                            JOptionPane.showMessageDialog(null, "el numero mayor :   " + num2);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "son iguales");
+                        }
+                        break;
+                    case 6:
+                        num1 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el numero"));
+                        num2 = Integer.parseInt(JOptionPane.showInputDialog("Ingresar el pocentaje"));
+                        resultado = ((num1 * num2) / 100);
+                        JOptionPane.showMessageDialog(null, "el porcentaje es:   " + resultado);
+                    case 7:
+                        int opcion;
+                        opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "Deseas salir:\n 1.Si\n 2.No"));
+                        if (opcion == 1) {
+                            System.exit(0);
+                        }
+
+                        break;
+
+                    default:
+                        JOptionPane.showMessageDialog(null, "Opcion Invalida");
+                }
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error");
+
             }
-            }
-       
-            while (operaciones < 5);
-        
-        
-        }   }
+        } while (operaciones <= 7);
 
-
+    }
+}
