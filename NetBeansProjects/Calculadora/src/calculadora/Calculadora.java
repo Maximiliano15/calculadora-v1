@@ -18,10 +18,10 @@ public class Calculadora {
      */
     @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
-        int operaciones = 0;
+      int operaciones = 0;
         int num1;
         int num2;
-        int resultado;
+        double resultado;
         do {
             try {
 
@@ -90,6 +90,7 @@ public class Calculadora {
 
             }
         } while (operaciones <= 7);
+
 
     }
 }
